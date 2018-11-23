@@ -24,7 +24,6 @@ set wrapscan
 set hlsearch
 
 set list
-" set listchars=tab:»-
 
 " netrw
 let g:netrw_altv = 1
@@ -34,6 +33,10 @@ let g:netrw_keepdir=0
 
 " file
 set noswapfile
+
+" quickfix
+autocmd QuickFixCmdPost *grep* cwindow
+autocmd QuickFixCmdPost *make* cwindow
 
 "
 " end

@@ -3,7 +3,10 @@
 #
 
 all:
-	g++ main.cc ring_buffer.cc
+	clang++ main.cc ring_buffer.cc
+
+run:
+	./a.out
 
 #
 # end

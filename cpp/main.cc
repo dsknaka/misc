@@ -82,18 +82,7 @@ int main(void)
     // my_vector();
     // my_list();
 
-    RingBuffer ring_buffer(3);
-    ring_buffer.Push(1);
-    ring_buffer.Push(2);
-    ring_buffer.Push(3);
-    ring_buffer.Push(4);
-    ring_buffer.Push(5);
-    ring_buffer.Pop();
-    ring_buffer.Pop();
-    ring_buffer.Pop();
-    ring_buffer.Pop();
-    ring_buffer.Pop();
-    ring_buffer.Pop();
+    TestRingBuffer();
 
     return 0;
 }

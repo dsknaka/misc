@@ -22,7 +22,10 @@ private:
     int m_buffer_num;
     int m_read_pointer;
     int m_write_pointer;
+    int m_valid_data_num;
 };
+
+void TestRingBuffer();
 
 #endif  // #ifndef RING_BUFFER_H_
 //
