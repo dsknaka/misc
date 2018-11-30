@@ -33,7 +33,9 @@ void RingBuffer::Push(int number)
     cout << "Push(" << number << ")" << endl;
 
     if (m_write_pointer == m_read_pointer) {
-        IncrementPointer(&m_read_pointer);
+        if (m_valid_data_num != 0) {
+            IncrementPointer(&m_read_pointer);
+        }
     }
 
     mp_buffer[m_write_pointer] = number;
@@ -83,6 +85,8 @@ void RingBuffer::Print()
 void TestRingBuffer()
 {
     RingBuffer ring_buffer(3);
+    ring_buffer.Push(1);
+    ring_buffer.Pop();
     ring_buffer.Push(1);
     ring_buffer.Push(2);
     ring_buffer.Push(3);
