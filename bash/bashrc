@@ -8,6 +8,7 @@ alias ll='ls -l'
 alias lla='ls -la' 
 
 export PS1="\u@mba:\w$ "
+export PATH=~/local/bin:$PATH
 
 #
 # end
