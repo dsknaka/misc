@@ -2,17 +2,17 @@
 " vimrc
 "
 
+syntax on
+
 set clipboard+=unnamed
 
 set helplang=ja,en
 set number
 set cursorline
-set laststatus=2
 set whichwrap=b,s,h,l,<,>,[,],~
 set mouse=a
-inoremap jj <Esc>
-syntax on
 set backspace=indent,eol,start
+set virtualedit=onemore
 
 set cindent
 set expandtab
@@ -28,6 +28,24 @@ set hlsearch
 
 set list
 set listchars=tab:>_,eol:$
+set noswapfile
+
+set laststatus=2
+set statusline=
+set statusline+=[%{mode()}]\   "" Mode
+set statusline+=%F  "" FileFullPath
+set statusline+=%y  "" FileType
+set statusline+=%m  "" Modify
+set statusline+=%r  "" ReadOnly
+set statusline+=%h  "" Help
+set statusline+=%w  "" Preview
+set statusline+=%=  "" Left <=> Right
+set statusline+=[%{&ff}]
+set statusline+=[%{&fileencoding}]
+set statusline+=[%l/%L]
+
+"" nnoremap : ;
+"" nnoremap ; :
 
 " netrw
 let g:netrw_altv=1
@@ -36,11 +54,24 @@ let g:netrw_winsize=85
 let g:netrw_keepdir=0
 
 " file
-set noswapfile
 
 " quickfix
 autocmd QuickFixCmdPost *grep* cwindow
 autocmd QuickFixCmdPost *make* cwindow
+
+" util
+inoremap <silent> jj <Esc>
+inoremap <silent> {} {}<Left>
+inoremap <silent> {<Enter> {}<Left><CR><ESC><S-o>
+inoremap <silent> () ()<left>
+inoremap <silent> [] []<left>
+inoremap <silent> "" ""<Left>
+inoremap <silent> '' ''<Left>
+inoremap <silent> <> <><Left>
+
+command! WM :w | :make
+command! WMR :w | :make | :make r
+command! WR :w | :make r
 
 "
 " end
