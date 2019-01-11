@@ -29,6 +29,8 @@ set hlsearch
 set list
 set listchars=tab:>_,eol:$
 set noswapfile
+set nobackup
+set noundofile
 
 set laststatus=2
 set statusline=
