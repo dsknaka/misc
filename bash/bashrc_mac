@@ -1,8 +1,8 @@
 #
-# ~/.bashrc
+# bashrc_mac
 #
 
-alias ls='ls -F -G'
+alias ls='\ls -F'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la' 
