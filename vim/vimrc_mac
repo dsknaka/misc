@@ -8,11 +8,12 @@ set clipboard+=unnamed
 
 set helplang=ja,en
 set number
-set cursorline
+" set cursorline
 set whichwrap=b,s,h,l,<,>,[,],~
 set mouse=a
 set backspace=indent,eol,start
 set virtualedit=onemore
+set background=dark
 
 set cindent
 set expandtab
